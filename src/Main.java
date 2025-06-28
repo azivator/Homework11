@@ -10,7 +10,7 @@ public class Main {
         } else {
             System.out.println(year +" год не является високосным");
         }
-}
+    }
     //Задача 2
     public static void checkOSAndSystemYear (int clientOS,int clientDeviceYear) {
         int currentYear = LocalDate.now().getYear();

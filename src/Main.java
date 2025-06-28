@@ -12,20 +12,28 @@ public class Main {
         }
     }
     //Задача 2
-    public static void checkOSAndSystemYear (int clientOS,int clientDeviceYear) {
-        int currentYear = LocalDate.now().getYear();
-        if (clientOS == 1) {
-            if (clientDeviceYear <= currentYear) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            } else {
-                System.out.println("Установите версию приложения для iOS по ссылке");
+    public static int checkOS (int clientOS) {
+        if (clientOS == 0) {
+                System.out.print("iOS");
             }
-        } else if (clientDeviceYear <= currentYear) {
-            System.out.println("Установите облегченную версию приложения для Android по ссылке");
-        } else {
-            System.out.println("Установите версию приложения для Android по ссылке");
-        }
+        else {
+                System.out.print("Android");
+            }
+        return clientOS;
     }
+    public static int checSystemYear (int clientDeviceYear) {
+        int currentYear = LocalDate.now().getYear();
+            if (clientDeviceYear <= currentYear) {
+                System.out.print("Установите облегченную версию приложения для ");
+            } else {
+                System.out.print("Установите обычную версию приложения для ");
+            }
+        return clientDeviceYear;
+    }
+    //public static void checOSAndSystemYear (void checSystemYear, void checkOS) {
+    //   void checOSAndSystemYear = checSystemYear + checkOS ;
+    //   System.out.print(checOSAndSystemYear);
+    //}
     //Задача 3
     public static void checkDeliveryTime (int deliveryDistance) {
         if (deliveryDistance <= 20) {
@@ -49,7 +57,9 @@ public class Main {
         System.out.println(' ');
         System.out.println("задача 2");
         System.out.println(' ');
-        checkOSAndSystemYear(1,2015);
+        checSystemYear(2015);
+        checkOS(1);
+        //System.out.println(checSystemYear(0) + checkOS(2012));
         System.out.println(' ');
         System.out.println("задача 3");
         System.out.println(' ');
